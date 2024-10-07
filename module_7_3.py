@@ -11,10 +11,9 @@ class WordsFinder:
             try:
                 with open(file_name, 'r', encoding='utf-8') as f:
                     content = f.read().lower()
-                    # Убираем знаки пунктуации
                     for punct in [',', '.', '=', '!', '?', ';', ':', ' - ']:
                         content = content.replace(punct, '')
-                    words = content.split()  # Разбиваем на слова
+                    words = content.split() 
                     all_words[file_name] = words
             except FileNotFoundError:
                 print(f"Файл {file_name} не найден.")
