@@ -24,12 +24,10 @@ print("Работа последовательных функций:", timedelta
 
 start_time_threads = time()
 
-threads = [
-    threading.Thread(target=write_words, args=(10, "example5.txt")),
+threads = [threading.Thread(target=write_words, args=(10, "example5.txt")),
     threading.Thread(target=write_words, args=(30, "example6.txt")),
     threading.Thread(target=write_words, args=(200, "example7.txt")),
-    threading.Thread(target=write_words, args=(100, "example8.txt")),
-]
+    threading.Thread(target=write_words, args=(100, "example8.txt")),]
 
 for thread in threads:
     thread.start()
